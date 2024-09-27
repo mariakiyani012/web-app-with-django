@@ -1,0 +1,45 @@
+/* Set a fixed size for the card */
+.card {
+    width: 400px; /* Adjust the width as needed */
+    height: 350px; /* Adjust the height as needed */
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ddd; /* Optional: add a border */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Style for the card content */
+.card-content {
+    padding: 15px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    display: box; /* Standard box display */
+    -webkit-line-clamp: 3; /* Show 3 lines of text for WebKit browsers */
+    line-clamp: 3; /* Standard version (future support) */
+    -webkit-box-orient: vertical;
+    box-orient: vertical; /* Standard version */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect to reveal full content */
+.card:hover .card-content {
+    -webkit-line-clamp: unset; /* WebKit */
+    line-clamp: unset; /* Standard */
+    white-space: normal;
+    overflow: visible;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    z-index: 10; /* Ensure the expanded card is on top */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Optional: add a shadow for the expanded view */
+    border: 1px solid #ccc; /* Optional: add a border for the expanded view */
+}
+
+h1 {
+    text-align: center;
+}
+
